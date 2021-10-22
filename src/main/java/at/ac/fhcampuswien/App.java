@@ -7,11 +7,45 @@ public class App {
     //todo Task 1
     public void largestNumber(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        double number;
+        double max = Double.MIN_VALUE;
+        int i = 1;
+        while (true) {
+            System.out.print("Number " + i + ": ");
+            number = sc.nextDouble();
+
+            if (number <= 0) break;
+
+            if (number > max) max = number;
+
+            i++;
+        }
+
+        System.out.println(i != 1 ? "The largest number is " + String.format("%.2f", max) : "No number entered.");
+
     }
 
     //todo Task 2
     public void stairs(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int lines = sc.nextInt();
+
+        if (lines > 0) {
+            int stairNr = 1;
+            StringBuilder stair = new StringBuilder();
+            for (int i = 0; i <= lines; i++) {
+                for (int j = 0; j < i; j++) {
+                    stair.append(stairNr).append(" ");
+                    stairNr++;
+                }
+                if (i != 0) stair.append(System.lineSeparator());
+            }
+            System.out.print(stair);
+        } else System.out.println("Invalid number!");
+
     }
 
     //todo Task 3
