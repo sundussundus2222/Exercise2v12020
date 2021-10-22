@@ -134,6 +134,23 @@ public class App {
     //todo Task 6
     public void happyNumbers(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int n = sc.nextInt();
+        while (n != 1 && n != 4) {
+            n = calculateNumber(n);
+        }
+        System.out.println(n == 1 ? "Happy number!" : "Sad number!");
+    }
+
+    public int calculateNumber(int number) {
+        int sum = 0;
+        while (number != 0) {
+            int firstDigit = number % 10;
+            number /= 10;
+            sum += firstDigit * firstDigit;
+        }
+        return sum;
     }
 
     public static void main(String[] args){
