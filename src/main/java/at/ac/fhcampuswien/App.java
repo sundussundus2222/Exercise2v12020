@@ -68,6 +68,40 @@ public class App {
     //todo Task 4
     public void printRhombus(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        System.out.print("h: ");
+        int height = sc.nextInt();
+        System.out.print("c: ");
+        char midChar = sc.next().charAt(0);
+
+        if (height % 2 == 0) {
+            System.out.println("Invalid number!");
+            return;
+        }
+
+        StringBuilder output = new StringBuilder();
+        String spaces = " ".repeat((height / 2) - 1);
+        String singleCharLine = spaces + " " + midChar;
+
+
+        StringBuilder output2 = new StringBuilder();
+        System.out.println(singleCharLine);
+        for (int i = 1; i <= height / 2; i++) {
+            char charPre = (char) (midChar - i);
+            output.insert(0, charPre);
+            if (i == 1)
+                output.append(midChar);
+            output.append(charPre);
+            System.out.println(spaces + output);
+
+            if (i != height / 2) {
+                output2.insert(0, spaces + output + System.lineSeparator());
+                spaces = spaces.substring(1);
+            }
+        }
+        System.out.println(" " + output2.toString().trim());
+        System.out.println(singleCharLine);
+
     }
 
     //todo Task 5
