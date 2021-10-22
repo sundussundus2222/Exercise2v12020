@@ -107,6 +107,28 @@ public class App {
     //todo Task 5
     public void marks(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        int markSum = 0;
+        int markCnt = 0;
+        int negMarks = 0;
+        int cnt = 1;
+        while (true) {
+            System.out.print("Mark " + cnt + ": ");
+            int num = sc.nextInt();
+            if (num == 0) break;
+            else if (num < 1 || num > 5) System.out.println("Invalid mark!");
+            else {
+                cnt++;
+                markSum += num;
+                markCnt++;
+            }
+
+            if (num == 5) negMarks++;
+        }
+
+        System.out.println("Average: " + String.format("%.2f", markCnt != 0 ? (double)markSum / markCnt : 0.00));
+        System.out.println("Negative marks: " + negMarks);
+
     }
 
     //todo Task 6
