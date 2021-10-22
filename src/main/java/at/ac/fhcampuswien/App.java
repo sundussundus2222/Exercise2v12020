@@ -51,6 +51,18 @@ public class App {
     //todo Task 3
     public void printPyramid(){
         // input your solution here
+        final int PYRAMID_LENGTH = 6;
+        System.out.println(generatePyramid(PYRAMID_LENGTH));
+    }
+
+    public String generatePyramid(int pyramidLength) {
+        StringBuilder sb = new StringBuilder();
+        int PYRAMID_MAX_WIDTH = (pyramidLength * 2) + 1;
+        for (int i = 0; i < pyramidLength; i++) {
+            sb.append(" ".repeat(((PYRAMID_MAX_WIDTH - (i * 2 + 1)) / 2) - 1)).append("*".repeat(i * 2 + 1));
+            if (i != pyramidLength - 1) sb.append(System.lineSeparator());
+        }
+        return sb.toString();
     }
 
     //todo Task 4
